@@ -1,0 +1,216 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="AI 数字漫剧个人艺术家作品集：视觉宇宙、原创漫剧、角色档案与商业作品。">
+  <meta name="theme-color" content="#090909">
+  <title>Visual World — AI 数字漫剧艺术家作品集</title>
+
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="css/variables.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/animations.css">
+  <link rel="stylesheet" href="css/responsive.css">
+</head>
+
+<body class="theme-dark">
+  <a class="skip-link" href="#main-content">跳到主要内容</a>
+
+  <div class="entry-screen" id="entryScreen" aria-labelledby="entryTitle">
+    <div class="entry-screen__grain" aria-hidden="true"></div>
+    <div class="entry-screen__content">
+      <p class="eyebrow">A DIGITAL STORY UNIVERSE</p>
+      <h1 id="entryTitle">在万千位面，寻找一个从未写下的故事。</h1>
+      <p class="entry-screen__translation">
+        Across countless realms, searching for a story never written.
+      </p>
+      <div class="entry-screen__actions">
+        <button class="button button--primary" id="enterWithSound" type="button">
+          进入故事 · 开启声音
+        </button>
+        <button class="button button--ghost" id="enterMuted" type="button">
+          静音进入
+        </button>
+      </div>
+      <p class="entry-screen__note">
+        背景音乐不会自动播放；你可以随时关闭。
+      </p>
+    </div>
+  </div>
+
+  <header class="site-header" id="siteHeader">
+    <a class="brand" href="#hero" aria-label="返回首页">
+      <span class="brand__mark" aria-hidden="true">◐</span>
+      <span class="brand__text" data-site-name>VISUAL WORLD</span>
+    </a>
+
+    <nav class="site-nav" aria-label="主要导航">
+      <a href="#universe">视觉宇宙</a>
+      <a href="#originals">原创漫剧</a>
+      <a href="#characters">角色档案</a>
+      <a href="#commercial">商业作品</a>
+      <a href="#about">关于</a>
+    </nav>
+
+    <button
+      class="sound-toggle"
+      id="soundToggle"
+      type="button"
+      aria-pressed="false"
+      aria-label="开启背景声音"
+    >
+      <span class="sound-toggle__dot" aria-hidden="true"></span>
+      <span id="soundToggleText">声音关闭</span>
+    </button>
+  </header>
+
+  <main id="main-content">
+    <section class="hero" id="hero" aria-labelledby="heroTitle">
+      <div class="hero__visual" aria-hidden="true">
+        <div class="hero-frame hero-frame--one"></div>
+        <div class="hero-frame hero-frame--two"></div>
+        <div class="hero-frame hero-frame--three"></div>
+        <div class="hero-frame hero-frame--four"></div>
+        <div class="hero__veil"></div>
+        <div class="hero__grain"></div>
+      </div>
+
+      <div class="hero__content">
+        <p class="eyebrow">AI COMIC DRAMA · VISUAL STORYTELLING</p>
+        <h2 id="heroTitle">在万千位面，<br>寻找一个从未写下的故事。</h2>
+        <p class="hero__translation">
+          Across countless realms, searching for a story never written.
+        </p>
+      </div>
+
+      <a class="scroll-cue" href="#manifesto">
+        <span>向下进入</span>
+        <span class="scroll-cue__line" aria-hidden="true"></span>
+      </a>
+    </section>
+
+    <section class="section section--manifesto" id="manifesto" aria-labelledby="manifestoTitle">
+      <div class="section-heading section-heading--narrow">
+        <p class="eyebrow">ARTIST STATEMENT</p>
+        <h2 id="manifestoTitle">创作不是生成一张图，<br>而是让角色在世界里继续活下去。</h2>
+      </div>
+      <div class="manifesto-copy">
+        <p>
+          这里将记录我的 AI 数字漫剧、角色实验与尚未被完整讲述的世界。
+          AI 是工具，故事、情绪、节奏和审美选择仍然来自创作者。
+        </p>
+        <p class="muted">
+          当前文字为第一版示例，可在 <code>data/site.js</code> 中替换。
+        </p>
+      </div>
+    </section>
+
+    <section class="section section--light" id="universe" aria-labelledby="universeTitle">
+      <div class="section-heading">
+        <p class="eyebrow">VISUAL UNIVERSE</p>
+        <h2 id="universeTitle">视觉宇宙 / 风格实验</h2>
+        <p>角色、场景、服装、光线与情绪的片段。点击作品可放大查看。</p>
+      </div>
+      <div class="project-grid project-grid--masonry" id="visualProjects" aria-live="polite"></div>
+    </section>
+
+    <section class="section section--light section--bordered" id="originals" aria-labelledby="originalsTitle">
+      <div class="section-heading">
+        <p class="eyebrow">ORIGINAL SERIES</p>
+        <h2 id="originalsTitle">原创 AI 漫剧</h2>
+        <p>以系列而不是单条视频组织作品，让人物、设定和故事持续生长。</p>
+      </div>
+      <div class="series-list" id="originalSeries" aria-live="polite"></div>
+    </section>
+
+    <section class="section section--ink" id="characters" aria-labelledby="charactersTitle">
+      <div class="section-heading section-heading--inverse">
+        <p class="eyebrow">CHARACTER ARCHIVE</p>
+        <h2 id="charactersTitle">角色与世界观档案</h2>
+        <p>人物并非独立立绘，而是故事里彼此牵引的坐标。</p>
+      </div>
+      <div class="character-grid" id="characterArchive" aria-live="polite"></div>
+    </section>
+
+    <section class="section section--light" id="commercial" aria-labelledby="commercialTitle">
+      <div class="section-heading">
+        <p class="eyebrow">SELECTED COMMISSIONS</p>
+        <h2 id="commercialTitle">商业漫剧作品</h2>
+        <p>商业项目放在原创世界之后，作为创作能力与执行能力的延伸。</p>
+      </div>
+      <div class="project-grid project-grid--commercial" id="commercialProjects" aria-live="polite"></div>
+    </section>
+
+    <section class="section section--process" id="process" aria-labelledby="processTitle">
+      <div class="section-heading section-heading--narrow">
+        <p class="eyebrow">PROCESS</p>
+        <h2 id="processTitle">从一句概念，到一个可以被观看的世界。</h2>
+      </div>
+
+      <ol class="process-list">
+        <li><span>01</span><strong>故事概念</strong><p>主题、冲突与情绪方向。</p></li>
+        <li><span>02</span><strong>角色设定</strong><p>人物、服装、表情与一致性。</p></li>
+        <li><span>03</span><strong>分镜设计</strong><p>镜头、节奏与视觉叙事。</p></li>
+        <li><span>04</span><strong>动态制作</strong><p>画面生成、动画、剪辑与声音。</p></li>
+      </ol>
+    </section>
+
+    <section class="section section--contact" id="about" aria-labelledby="aboutTitle">
+      <div class="contact-panel">
+        <div>
+          <p class="eyebrow">ABOUT THE ARTIST</p>
+          <h2 id="aboutTitle">下一个未被写下的故事，<br>或许正在某个位面等待。</h2>
+        </div>
+        <div class="contact-panel__copy">
+          <p data-artist-bio>
+            这里用于放置你的个人简介、创作方向与当前计划。
+          </p>
+          <a class="text-link" data-contact-link href="mailto:replace-me@example.com">
+            联系我
+            <span aria-hidden="true">↗</span>
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>© <span id="currentYear"></span> <span data-site-name>VISUAL WORLD</span></p>
+    <a href="#hero">返回顶部 ↑</a>
+  </footer>
+
+  <dialog class="lightbox" id="lightbox" aria-labelledby="lightboxTitle">
+    <button class="lightbox__close" id="lightboxClose" type="button" aria-label="关闭作品详情">×</button>
+    <button class="lightbox__nav lightbox__nav--prev" id="lightboxPrev" type="button" aria-label="上一件作品">←</button>
+
+    <div class="lightbox__media" id="lightboxMedia"></div>
+
+    <div class="lightbox__caption">
+      <p class="eyebrow" id="lightboxMeta"></p>
+      <h2 id="lightboxTitle"></h2>
+      <p id="lightboxDescription"></p>
+    </div>
+
+    <button class="lightbox__nav lightbox__nav--next" id="lightboxNext" type="button" aria-label="下一件作品">→</button>
+  </dialog>
+
+  <audio id="ambientAudio" loop preload="none">
+    <source src="assets/audio/ambient.mp3" type="audio/mpeg">
+  </audio>
+
+  <script src="data/site.js"></script>
+  <script src="data/projects.js"></script>
+  <script src="data/characters.js"></script>
+
+  <script src="js/accessibility.js"></script>
+  <script src="js/audio.js"></script>
+  <script src="js/lightbox.js"></script>
+  <script src="js/render-projects.js"></script>
+  <script src="js/hero.js"></script>
+  <script src="js/scroll-effects.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
