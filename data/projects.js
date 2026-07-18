@@ -52,18 +52,18 @@ window.PORTFOLIO_PROJECTS = Object.freeze([
     accent: "rgba(75, 86, 101, 0.78)"
   },
   {
-    id: "moon-lost-voice",
-    type: "original-series",
-    title: "月亮失语之后 · 示例系列",
-    subtitle: "After the Moon Lost Its Voice",
-    year: "2026",
-    status: "正在创作",
-    cover: "",
-    video: "",
-    description: "一个关于记忆、身份与人造月亮的数字漫剧示例。请用你的真实原创系列替换。",
-    tags: ["原创漫剧", "科幻", "角色叙事"],
-    featured: true
-  },
+  id: "thirteen-dynasties-northern-wei",
+  type: "original-series",
+  title: "十三朝系列-北魏篇《我的老板是孝文帝》",
+  subtitle: "",
+  year: "2026",
+  status: "已完成",
+  cover: "",
+  video: "",
+  description: "待补充作品简介。",
+  tags: ["原创 AI 短剧", "十三朝系列", "北魏篇"],
+  featured: true
+},
   {
     id: "unnamed-platform",
     type: "original-series",
