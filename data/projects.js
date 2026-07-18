@@ -58,7 +58,7 @@ window.PORTFOLIO_PROJECTS = Object.freeze([
   subtitle: "",
   year: "2026",
   status: "已完成",
-  cover: "",
+  cover: "assets/projects/thirteen-dynasties-northern-wei/cover.webp",
   video: "",
   description: "待补充作品简介。",
   tags: ["原创 AI 短剧", "十三朝系列", "北魏篇"],
