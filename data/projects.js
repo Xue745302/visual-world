@@ -59,7 +59,7 @@ window.PORTFOLIO_PROJECTS = Object.freeze([
   year: "2026",
   status: "已完成",
   cover: "assets/projects/thirteen-dynasties-northern-wei/cover.webp",
-  video: "assets/projects/thirteen-dynasties-northern-wei/cover.webp",
+  video: "assets/projects/thirteen-dynasties-northern-wei/trailer.mp4",
   description: "负债累累的历史博主崔泽，在人生最低谷意外穿越到北魏迁都前夕。为了活下去，他以“预知未来”为筹码进入孝文帝身边，试图凭借后世知识改变历史，却逐渐发现，自己或许早已成为历史的一部分。",
   tags: ["原创 AI 短剧", "历史穿越", "北魏", "时空叙事"],
   featured: true
