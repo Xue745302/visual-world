@@ -51,17 +51,17 @@ window.PORTFOLIO_PROJECTS = Object.freeze([
     aspectRatio: "1.55",
     accent: "rgba(75, 86, 101, 0.78)"
   },
-  {
+ {
   id: "thirteen-dynasties-northern-wei",
   type: "original-series",
   title: "十三朝系列-北魏篇《我的老板是孝文帝》",
-  subtitle: "",
+  subtitle: "THIRTEEN DYNASTIES · NORTHERN WEI",
   year: "2026",
   status: "已完成",
   cover: "assets/projects/thirteen-dynasties-northern-wei/cover.webp",
   video: "",
-  description: "待补充作品简介。",
-  tags: ["原创 AI 短剧", "十三朝系列", "北魏篇"],
+  description: "负债累累的历史博主崔泽，在人生最低谷意外穿越到北魏迁都前夕。为了活下去，他以“预知未来”为筹码进入孝文帝身边，试图凭借后世知识改变历史，却逐渐发现，自己或许早已成为历史的一部分。",
+  tags: ["原创 AI 短剧", "历史穿越", "北魏", "时空叙事"],
   featured: true
 },
   {
