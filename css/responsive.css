@@ -157,6 +157,18 @@
     width: min(100%, 20rem);
   }
 
+  .entry-screen__translation--fr {
+    max-width: 28rem;
+    font-size: 0.95rem;
+    letter-spacing: 0.035em;
+  }
+
+  .entry-screen__translation--en {
+    max-width: 24rem;
+    font-size: 0.7rem;
+    letter-spacing: 0.12em;
+  }
+
   .lightbox {
     width: 100vw;
     height: 100svh;
