@@ -65,6 +65,17 @@
 }
 
 @media (max-width: 46rem) {
+  .entry-screen__translation--fr {
+  max-width: 28rem;
+  font-size: 0.95rem;
+  letter-spacing: 0.035em;
+}
+
+.entry-screen__translation--en {
+  max-width: 24rem;
+  font-size: 0.7rem;
+  letter-spacing: 0.12em;
+}
   :root {
     --header-height: 4.2rem;
   }
