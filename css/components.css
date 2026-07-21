@@ -114,17 +114,19 @@
   margin-right: auto;
   margin-left: auto;
   color: rgba(255, 255, 255, 0.58);
-  font-family: Georgia, serif;
+  font-family: Georgia, "Times New Roman", serif;
   font-style: italic;
 }
 
 .entry-screen__translation--fr {
+  max-width: 64rem;
   margin-top: var(--space-5);
   font-size: clamp(1rem, 1.65vw, 1.45rem);
   letter-spacing: 0.06em;
 }
 
 .entry-screen__translation--en {
+  max-width: 52rem;
   margin-top: var(--space-2);
   font-size: 0.78rem;
   letter-spacing: 0.16em;
@@ -144,7 +146,52 @@
   color: rgba(255, 255, 255, 0.42);
   font-size: 0.76rem;
 }
+@media (hover: hover) and (pointer: fine) and (prefers-reduced-motion: no-preference) {
+  .entry-screen__content > .eyebrow,
+  .entry-screen__content > h1,
+  .entry-screen__translation,
+  .entry-screen__actions .button,
+  .entry-screen__note {
+    opacity: 0.2;
+    filter: brightness(0.55);
+    transition:
+      opacity 420ms ease,
+      filter 420ms ease,
+      text-shadow 420ms ease,
+      transform 220ms ease,
+      color 220ms ease,
+      background-color 220ms ease,
+      border-color 220ms ease;
+  }
 
+  /* 中文默认比其他内容稍亮，保证主标题仍然可辨认 */
+  .entry-screen__content > h1 {
+    opacity: 0.28;
+  }
+
+  /* 法文是第二层级 */
+  .entry-screen__translation--fr {
+    opacity: 0.34;
+  }
+
+  /* 英文和辅助说明最暗 */
+  .entry-screen__translation--en,
+  .entry-screen__note {
+    opacity: 0.26;
+  }
+
+  /* 鼠标移动到对应文字时亮起 */
+  .entry-screen__content > .eyebrow:hover,
+  .entry-screen__content > h1:hover,
+  .entry-screen__translation:hover,
+  .entry-screen__actions .button:hover,
+  .entry-screen__actions .button:focus-visible,
+  .entry-screen__note:hover {
+    opacity: 1;
+    filter: brightness(1);
+    text-shadow: 0 0 1.8rem rgba(255, 255, 255, 0.22);
+  }
+}
 .button {
   min-height: 2.9rem;
   border: 1px solid transparent;
