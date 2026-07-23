@@ -799,3 +799,81 @@
     rgba(255, 244, 232, 0.7) 100%
   );
 }
+/* 最终修正：保持文字清晰，同时保留鼠标光圈 */
+.entry-screen__content > .eyebrow,
+.entry-screen__content > h1,
+.entry-screen__translation,
+.entry-screen__note,
+.entry-screen__actions .button {
+  opacity: 1 !important;
+  filter: none !important;
+}
+
+/* 默认状态也必须看得清 */
+.entry-screen__content > .eyebrow {
+  color: rgba(255, 248, 238, 0.78);
+}
+
+.entry-screen__content > h1 {
+  color: rgba(255, 248, 238, 0.88);
+}
+
+.entry-screen__translation--fr {
+  color: rgba(255, 248, 238, 0.76);
+}
+
+.entry-screen__translation--en,
+.entry-screen__note {
+  color: rgba(255, 248, 238, 0.66);
+}
+
+/* 鼠标附近变成纯白，远处仍保持清晰 */
+.entry-screen.has-pointer-spotlight
+.entry-screen__content > .eyebrow,
+.entry-screen.has-pointer-spotlight
+.entry-screen__content > h1,
+.entry-screen.has-pointer-spotlight
+.entry-screen__translation,
+.entry-screen.has-pointer-spotlight
+.entry-screen__note {
+  background-image: radial-gradient(
+    circle 220px at
+    var(--spotlight-local-x, 50%)
+    var(--spotlight-local-y, 50%),
+    #ffffff 0%,
+    rgba(255, 253, 248, 0.98) 30%,
+    rgba(255, 248, 238, 0.86) 60%,
+    rgba(255, 248, 238, 0.72) 100%
+  );
+
+  color: transparent;
+  -webkit-text-fill-color: transparent;
+  -webkit-background-clip: text;
+  background-clip: text;
+}
+
+/* 中文标题使用更大的照亮区域 */
+.entry-screen.has-pointer-spotlight
+.entry-screen__content > h1 {
+  background-image: radial-gradient(
+    circle 300px at
+    var(--spotlight-local-x, 50%)
+    var(--spotlight-local-y, 50%),
+    #ffffff 0%,
+    rgba(255, 253, 248, 0.98) 35%,
+    rgba(255, 248, 238, 0.88) 68%,
+    rgba(255, 248, 238, 0.76) 100%
+  );
+}
+
+/* 手机端不使用鼠标光圈 */
+@media (max-width: 46rem) {
+  .entry-screen__content > .eyebrow,
+  .entry-screen__content > h1,
+  .entry-screen__translation,
+  .entry-screen__note {
+    background-image: none !important;
+    color: rgba(255, 248, 238, 0.9) !important;
+    -webkit-text-fill-color: currentColor !important;
+  }
+}
