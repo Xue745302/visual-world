@@ -763,3 +763,39 @@
   color: var(--color-muted);
   text-align: center;
 }
+/* 提高开屏文字可读性 */
+.entry-screen__eyebrow,
+.entry-screen__content > h1,
+.entry-screen__translation,
+.entry-screen__note {
+  opacity: 1;
+}
+
+/* 鼠标光圈之外也保持清晰 */
+.entry-screen.has-pointer-spotlight .entry-screen__eyebrow,
+.entry-screen.has-pointer-spotlight .entry-screen__content > h1,
+.entry-screen.has-pointer-spotlight .entry-screen__translation,
+.entry-screen.has-pointer-spotlight .entry-screen__note {
+  background-image: radial-gradient(
+    circle 180px at var(--spotlight-local-x, 50%) var(--spotlight-local-y, 50%),
+    rgba(255, 255, 255, 1) 0%,
+    rgba(255, 250, 242, 0.96) 32%,
+    rgba(255, 244, 232, 0.78) 65%,
+    rgba(255, 244, 232, 0.62) 100%
+  );
+  color: transparent;
+  -webkit-background-clip: text;
+  background-clip: text;
+  text-shadow: 0 2px 18px rgba(30, 8, 3, 0.18);
+}
+
+/* 中文主标题更清楚 */
+.entry-screen.has-pointer-spotlight .entry-screen__content > h1 {
+  background-image: radial-gradient(
+    circle 250px at var(--spotlight-local-x, 50%) var(--spotlight-local-y, 50%),
+    #ffffff 0%,
+    rgba(255, 250, 242, 0.98) 38%,
+    rgba(255, 244, 232, 0.82) 72%,
+    rgba(255, 244, 232, 0.7) 100%
+  );
+}
