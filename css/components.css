@@ -781,9 +781,9 @@
     rgba(255, 255, 255, 1) 0%,
     rgba(255, 250, 242, 0.96) 32%,
     rgba(255, 244, 232, 0.78) 65%,
-    rgba(255, 244, 232, 0.62) 100%
+    rgba(255, 248, 238, 0.82) 100%
   );
-  color: transparent;
+  color: #ffffff;
   -webkit-background-clip: text;
   background-clip: text;
   text-shadow: 0 2px 18px rgba(30, 8, 3, 0.18);
