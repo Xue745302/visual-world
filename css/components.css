@@ -164,33 +164,120 @@
       border-color 220ms ease;
   }
 
-  /* 中文默认比其他内容稍亮，保证主标题仍然可辨认 */
-  .entry-screen__content > h1 {
-    opacity: 0.28;
+  /* 开屏动态配色层 */
+.entry-screen::after {
+  position: absolute;
+  z-index: 0;
+  inset: 0;
+  background-color: #393430;
+  content: "";
+  pointer-events: none;
+  transition: background-color 800ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+/* 中文：陶土红 */
+.entry-screen.is-tone-zh::after {
+  background-color: #a94730;
+}
+
+/* 法文：蓝紫色 */
+.entry-screen.is-tone-fr::after {
+  background-color: #5652a6;
+}
+
+/* 英文：湖水青绿 */
+.entry-screen.is-tone-en::after {
+  background-color: #24766c;
+}
+
+/* 按钮区域：琥珀棕 */
+.entry-screen.is-tone-actions::after {
+  background-color: #9b642d;
+}
+
+/* 鼠标跟随的柔和光晕 */
+.entry-screen::before {
+  position: absolute;
+  z-index: 1;
+  inset: 0;
+  background:
+    radial-gradient(
+      circle 15rem at var(--spotlight-screen-x, 50%) var(--spotlight-screen-y, 45%),
+      rgba(255, 246, 228, 0.3),
+      rgba(255, 246, 228, 0.12) 42%,
+      transparent 74%
+    );
+  content: "";
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 300ms ease;
+}
+
+.entry-screen.has-pointer-spotlight::before {
+  opacity: 1;
+}
+
+/* 光圈经过的文字 */
+.entry-screen.has-pointer-spotlight .entry-screen__content > .eyebrow,
+.entry-screen.has-pointer-spotlight .entry-screen__content > h1,
+.entry-screen.has-pointer-spotlight .entry-screen__translation,
+.entry-screen.has-pointer-spotlight .entry-screen__note {
+  color: transparent;
+  background-image:
+    radial-gradient(
+      circle 11rem at var(--spotlight-local-x, 50%) var(--spotlight-local-y, 50%),
+      rgba(255, 255, 255, 1) 0%,
+      rgba(255, 252, 244, 0.98) 28%,
+      rgba(255, 252, 244, 0.74) 55%,
+      rgba(255, 252, 244, 0.46) 78%,
+      rgba(255, 252, 244, 0.34) 100%
+    );
+  background-repeat: no-repeat;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* 中文标题使用更大的光圈 */
+.entry-screen.has-pointer-spotlight .entry-screen__content > h1 {
+  background-image:
+    radial-gradient(
+      circle 14rem at var(--spotlight-local-x, 50%) var(--spotlight-local-y, 50%),
+      rgba(255, 255, 255, 1) 0%,
+      rgba(255, 252, 244, 0.98) 30%,
+      rgba(255, 252, 244, 0.72) 58%,
+      rgba(255, 252, 244, 0.43) 80%,
+      rgba(255, 252, 244, 0.3) 100%
+    );
+}
+
+/* 保证按钮始终清晰 */
+.entry-screen__actions {
+  position: relative;
+  z-index: 3;
+}
+
+.entry-screen__actions .button {
+  opacity: 1;
+}
+
+/* 手机端关闭鼠标效果并保持正常颜色 */
+@media (max-width: 46rem) {
+  .entry-screen::before {
+    display: none;
   }
 
-  /* 法文是第二层级 */
-  .entry-screen__translation--fr {
-    opacity: 0.34;
+  .entry-screen::after {
+    background-color: #393430;
   }
+}
 
-  /* 英文和辅助说明最暗 */
-  .entry-screen__translation--en,
-  .entry-screen__note {
-    opacity: 0.26;
+@media (prefers-reduced-motion: reduce) {
+  .entry-screen::before,
+  .entry-screen::after {
+    transition: none;
   }
-
-  /* 鼠标移动到对应文字时亮起 */
-  .entry-screen__content > .eyebrow:hover,
-  .entry-screen__content > h1:hover,
-  .entry-screen__translation:hover,
-  .entry-screen__actions .button:hover,
-  .entry-screen__actions .button:focus-visible,
-  .entry-screen__note:hover {
-    opacity: 1;
-    filter: brightness(1);
-    text-shadow: 0 0 1.8rem rgba(255, 255, 255, 0.22);
-  }
+}
 }
 .button {
   min-height: 2.9rem;
